@@ -4,11 +4,13 @@ import {
   BrowserRouter as Router, 
   Redirect, 
   Route, 
-  Switch } from 'react-router-dom';
+  Switch,
+  Link
+} from 'react-router-dom';
 import './App.css';
 import AuthPage from './AuthPage';
 import DeckList from './DeckList';
-import { getUser } from './services/fetch-utils';
+import { getUser, logout } from './services/fetch-utils';
 
 
 function App() {
@@ -25,14 +27,25 @@ function App() {
     
   }, []);
 
-  console.log('||', currentUser);
+  // console.log('||', currentUser);
+
+  async function handleLogout() {
+    logout();
+    setCurrentUser('');
+  }
 
 
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-
+          {currentUser &&
+            <ul>
+              <Link></Link>
+              <Link></Link>
+              <button onClick={handleLogout}>Logout</button>
+            </ul>
+          }
         </header>
         <main>
           <Switch>

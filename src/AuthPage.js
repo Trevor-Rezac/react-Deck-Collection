@@ -12,7 +12,9 @@ export default function AuthPage({ setCurrentUser }) {
     setEmailForm('');
     setPasswordForm('');
   }
-  console.log('||', emailForm, passwordForm);
+  // console.log('||', emailForm, passwordForm);
+
+  
   return (
     <div className='auth-page'>
       <h2>Deck Collection</h2>
