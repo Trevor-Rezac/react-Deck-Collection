@@ -57,6 +57,7 @@ a {
   font-size: large;
   background-color: #282c34;
   color: white;
+  text-decoration: none;
 }
 
 a:hover {

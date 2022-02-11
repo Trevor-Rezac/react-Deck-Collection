@@ -35,3 +35,10 @@ export async function logout() {
   return window.location.href = '/';
 }
 
+export async function createDeck(deck) {
+  const response = await client
+    .from('decks')
+    .insert([deck]);
+
+  return checkError(response);
+}
