@@ -10,6 +10,7 @@ import {
 import './App.css';
 import AuthPage from './AuthPage';
 import DeckList from './DeckList';
+import AddDeckPage from './AddDeckPage';
 import { getUser, logout } from './services/fetch-utils';
 
 
@@ -27,8 +28,6 @@ function App() {
     
   }, []);
 
-  // console.log('||', currentUser);
-
   async function handleLogout() {
     logout();
     setCurrentUser('');
@@ -41,8 +40,8 @@ function App() {
         <header className="App-header">
           {currentUser &&
             <ul>
-              <Link></Link>
-              <Link></Link>
+              <Link to="/add-deck">Add a Deck</Link>
+              <Link to="/deck-list">Deck List</Link>
               <button onClick={handleLogout}>Logout</button>
             </ul>
           }
@@ -54,6 +53,9 @@ function App() {
             </Route>
             <Route exact path="/deck-list" >
               {currentUser ? <DeckList /> : <Redirect to="/" />}
+            </Route>
+            <Route exact path="/add-deck" >
+              {currentUser ? <AddDeckPage /> : <Redirect to="/" />}
             </Route>
           </Switch>
         </main>
