@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getDecks } from './services/fetch-utils';
+import Deck from './Deck';
 
 export default function DeckList() {
   const [decks, setDecks] = useState([]);
@@ -17,6 +18,11 @@ export default function DeckList() {
 
   console.log('||', decks);
   return (
-    <h3>Deck List</h3>
+    <>
+      <h3>Deck List</h3>
+      <div className='deck-list'>
+        {decks.map((deck, i) => <Deck key={`${deck}-${i}`} deck={deck} />)}
+      </div>
+    </>
   );
 }
