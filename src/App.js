@@ -24,6 +24,7 @@ function App() {
     fetchUser();
     
   }, []);
+
   console.log('||', currentUser);
 
 

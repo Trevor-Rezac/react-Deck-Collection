@@ -17,13 +17,13 @@ export async function redirectIfLoggedIn() {
   }
 }
 
-export async function signupUser(email, password){
+export async function signUp(email, password){
   const response = await client.auth.signUp({ email, password });
 
   return response.user;
 }
 
-export async function signInUser(email, password){
+export async function signIn(email, password){
   const response = await client.auth.signIn({ email, password });
 
   return response.user;
