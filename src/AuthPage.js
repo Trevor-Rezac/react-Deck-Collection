@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signUp } from './services/fetch-utils';
+import { signIn, signUp } from './services/fetch-utils';
 
 export default function AuthPage({ setCurrentUser }) {
   const [emailForm, setEmailForm] = useState('');
@@ -14,11 +14,19 @@ export default function AuthPage({ setCurrentUser }) {
   }
   // console.log('||', emailForm, passwordForm);
 
-  
+  async function handleSignIn(e) {
+    e.preventDefault();
+    const user = await signIn(emailForm, passwordForm);
+    setCurrentUser(user);
+    setEmailForm('');
+    setPasswordForm('');
+  }
+
+
   return (
     <div className='auth-page'>
       <h2>Deck Collection</h2>
-      <form>
+      <form onSubmit={handleSignIn}>
         <label>
           Email
           <input 
@@ -37,8 +45,8 @@ export default function AuthPage({ setCurrentUser }) {
             onChange={(e) => setPasswordForm(e.target.value)}
           />
         </label>
-        <button onClick={handleSignUp}>Sign Up</button>
-        <button>Sign In</button>
+        <button type='button' onClick={handleSignUp}>Sign Up</button>
+        <button type='button' onClick={handleSignIn}>Sign In</button>
       </form>
     </div>
   );
