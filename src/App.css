@@ -15,13 +15,19 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100%;
+  width: 100%;
+  height: 60px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .App-link {
@@ -42,4 +48,22 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+a {
+  border: solid 1px white;
+  border-radius: 50px;
+  padding: .8rem;
+  font-size: large;
+  background-color: #282c34;
+  color: white;
+}
+
+a:hover {
+  border: solid 1px black;
+  border-radius: 50px;
+  padding: .8rem;
+  font-size: large;
+  background-color: white;
+  color: #282c34;
 }

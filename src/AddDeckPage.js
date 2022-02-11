@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function AddDeckPage() {
   return (
-    <div>AddDeckPage</div>
+    <h3>Add a Deck!</h3>
   );
 }

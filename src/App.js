@@ -39,11 +39,11 @@ function App() {
       <div className="App">
         <header className="App-header">
           {currentUser &&
-            <ul>
+            <div className='nav-links'>
               <Link to="/add-deck">Add a Deck</Link>
               <Link to="/deck-list">Deck List</Link>
               <button onClick={handleLogout}>Logout</button>
-            </ul>
+            </div>
           }
         </header>
         <main>
