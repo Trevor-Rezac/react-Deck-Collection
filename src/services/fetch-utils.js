@@ -42,3 +42,11 @@ export async function createDeck(deck) {
 
   return checkError(response);
 }
+
+export async function getDecks() {
+  const response = await client
+    .from('decks')
+    .select();
+  
+  return checkError(response);
+}
