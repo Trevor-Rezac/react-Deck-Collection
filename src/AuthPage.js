@@ -27,24 +27,20 @@ export default function AuthPage({ setCurrentUser }) {
     <div className='auth-page'>
       <h2>Deck Collection</h2>
       <form onSubmit={handleSignIn}>
-        <label>
-          Email
-          <input 
-            required type="email"
-            name="email"
-            value={emailForm}
-            onChange={(e) => setEmailForm(e.target.value)}
-          />
-        </label>
-        <label>
-          Password
-          <input 
-            required type="password"
-            name="password"
-            value={passwordForm}
-            onChange={(e) => setPasswordForm(e.target.value)}
-          />
-        </label>
+        <input
+          placeholder='Email'
+          required type="email"
+          name="email"
+          value={emailForm}
+          onChange={(e) => setEmailForm(e.target.value)}
+        />
+        <input
+          placeholder='Password'
+          required type="password"
+          name="password"
+          value={passwordForm}
+          onChange={(e) => setPasswordForm(e.target.value)}
+        />
         <button onClick={handleSignIn}>Sign In</button>
         <button type='button' onClick={handleSignUp}>Sign Up</button>
       </form>

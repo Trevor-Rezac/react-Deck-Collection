@@ -5,7 +5,7 @@ import { createDeck } from './services/fetch-utils';
 export default function AddDeckPage() {
   const [nameForm, setNameForm] = useState('');
   const [designerForm, setDesignerForm] = useState('');
-  const [copiesForm, setCopiesForm] = useState(1);
+  const [copiesForm, setCopiesForm] = useState('');
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -26,33 +26,27 @@ export default function AddDeckPage() {
     <div>
       <h3>Add a Deck!</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Deck Name
-          <input 
-            required type="text"
-            name='deck-name'
-            value={nameForm}
-            onChange={(e) => setNameForm(e.target.value)}
-          />
-        </label>
-        <label>
-          Designer
-          <input 
-            name='designer'
-            value={designerForm}
-            onChange={(e) => setDesignerForm(e.target.value)}
-            required type="text"
-          />
-        </label>
-        <label>
-          Copies owned
-          <input 
-            required type="text"
-            name='copies'
-            value={copiesForm}
-            onChange={(e) => setCopiesForm(e.target.value)}
-          />
-        </label>
+        <input
+          placeholder='Deck Name'
+          required type="text"
+          name='deck-name'
+          value={nameForm}
+          onChange={(e) => setNameForm(e.target.value)}
+        />
+        <input 
+          placeholder='Designer'
+          name='designer'
+          value={designerForm}
+          onChange={(e) => setDesignerForm(e.target.value)}
+          required type="text"
+        />
+        <input
+          placeholder='Copies owned'
+          required type="text"
+          name='copies'
+          value={copiesForm}
+          onChange={(e) => setCopiesForm(e.target.value)}
+        />
         <button>Add Deck</button>
       </form>
     </div>
