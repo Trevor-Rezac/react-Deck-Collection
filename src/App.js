@@ -43,7 +43,7 @@ function App() {
             <div className='nav-links'>
               <Link to="/add-deck">Add a Deck</Link>
               <Link to="/deck-list">Deck List</Link>
-              <button onClick={handleLogout}>Logout</button>
+              <button className='logout-btn' onClick={handleLogout}>Logout</button>
             </div>
           }
         </header>
