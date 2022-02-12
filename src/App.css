@@ -80,7 +80,9 @@ header a:hover, .logout-btn:hover {
 .deck {
   border: solid 1px black;
   border-radius: 5px;
-  width: fit-content;
+  height: 11rem;
+  width: 7.92rem;
   padding: .5rem;
   margin: 5px;
+  object-fit: cover;
 }
