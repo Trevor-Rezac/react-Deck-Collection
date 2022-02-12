@@ -12,6 +12,7 @@ import AuthPage from './AuthPage';
 import DeckList from './DeckList';
 import AddDeckPage from './AddDeckPage';
 import { getUser, logout } from './services/fetch-utils';
+import DeckDetail from './DeckDetail';
 
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
             </Route>
             <Route exact path="/deck-list" >
               {currentUser ? <DeckList /> : <Redirect to="/" />}
+            </Route>
+            <Route exact path="/deck-list/:id" >
+              {currentUser ? <DeckDetail /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/add-deck" >
               {currentUser ? <AddDeckPage /> : <Redirect to="/" />}

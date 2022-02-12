@@ -8,15 +8,11 @@ export default function DeckList() {
   useEffect(() => {
     async function fetchDecks() {
       const decks = await getDecks();
-
       setDecks(decks);
     }
-
     fetchDecks();
-
   }, []);
 
-  console.log('||', decks);
   return (
     <>
       <h3>Deck List</h3>

@@ -50,3 +50,13 @@ export async function getDecks() {
   
   return checkError(response);
 }
+
+export async function getSingleDeck(id) {
+  const response = await client
+    .from('decks')
+    .select()
+    .match({ id })
+    .single();
+
+  return checkError(response);
+}
