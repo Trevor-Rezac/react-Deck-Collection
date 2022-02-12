@@ -10,7 +10,7 @@ export default function AddDeckPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    
+
     await createDeck({
       name: nameForm,
       designer: designerForm,
@@ -29,7 +29,8 @@ export default function AddDeckPage() {
         <label>
           Deck Name
           <input 
-            required name='deck-name'
+            required type="text"
+            name='deck-name'
             value={nameForm}
             onChange={(e) => setNameForm(e.target.value)}
           />
@@ -37,20 +38,22 @@ export default function AddDeckPage() {
         <label>
           Designer
           <input 
-            required name='designer'
+            name='designer'
             value={designerForm}
             onChange={(e) => setDesignerForm(e.target.value)}
+            required type="text"
           />
         </label>
         <label>
           Copies owned
           <input 
-            required name='copies'
+            required type="text"
+            name='copies'
             value={copiesForm}
             onChange={(e) => setCopiesForm(e.target.value)}
           />
         </label>
-        <button onClick={handleSubmit}>Add Deck</button>
+        <button>Add Deck</button>
       </form>
     </div>
   );

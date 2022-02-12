@@ -45,8 +45,8 @@ export default function AuthPage({ setCurrentUser }) {
             onChange={(e) => setPasswordForm(e.target.value)}
           />
         </label>
+        <button onClick={handleSignIn}>Sign In</button>
         <button type='button' onClick={handleSignUp}>Sign Up</button>
-        <button type='button' onClick={handleSignIn}>Sign In</button>
       </form>
     </div>
   );

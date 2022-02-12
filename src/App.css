@@ -69,10 +69,6 @@ header a:hover, .logout-btn:hover {
   color: #282c34;
 }
 
-.logout-btn {
-
-}
-
 .deck-list {
   display: flex;
   flex-direction: row;
