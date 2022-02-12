@@ -22,6 +22,7 @@ export default function DeckDetail() {
       <h2>{deck.name}</h2>
       <h2>By: {deck.designer}</h2>
       <h2>Copies owned: {deck.copies}</h2>
+      <img src={deck.img_url}/>
     </div>
   );
 }

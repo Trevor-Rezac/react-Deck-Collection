@@ -6,6 +6,7 @@ export default function AddDeckPage() {
   const [nameForm, setNameForm] = useState('');
   const [designerForm, setDesignerForm] = useState('');
   const [copiesForm, setCopiesForm] = useState('');
+  const [imgForm, setImgForm] = useState('');
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -14,7 +15,8 @@ export default function AddDeckPage() {
     await createDeck({
       name: nameForm,
       designer: designerForm,
-      copies: copiesForm
+      copies: copiesForm,
+      img_url: imgForm
     });
 
     history.push('/deck-list');
@@ -46,6 +48,13 @@ export default function AddDeckPage() {
           name='copies'
           value={copiesForm}
           onChange={(e) => setCopiesForm(e.target.value)}
+        />
+        <input
+          placeholder='Image URL'
+          type="text"
+          name='deck-image'
+          value={imgForm}
+          onChange={(e) => setImgForm(e.target.value)}
         />
         <button>Add Deck</button>
       </form>
